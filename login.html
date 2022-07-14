@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="container">
+          <h2>Login to your Account</h2>
+            <form>
+                <label>Email Address</label><br>
+                <input type="text" name="email" placeholder="email@example.org" pattern="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/" required><br>
+                <label>Password</label><br>
+                <input type="password" name="pass" placeholder="********" pattern="(?=.{8,})" required><br>
+                <button>Login</button>
+            </form>
+        </div>
+       <script>
+            var emailField = document.querySelector("input[name=email]");
+
+            emailField.addEventListener("invalid", function(){
+                this.setCustomValidity('');
+                if (!this.validity.valid) {
+                this.setCustomValidity('Format Email anda Tidak Valid');  
+                }
+            });
+        </script>
+        <p class="one"> Don't have an account?
+            <a href="register.html">Register</a>
+        </p>
+        <p class="two"> Forgotten your password?
+            <a href="#">Recover Password</a>
+        </p>
+    </body>
+</html>

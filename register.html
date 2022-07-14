@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Register</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="container">
+          <h2>Create Your Account</h2>
+            <form>
+                <label>First Name</label> 
+                <br>
+                <input type="text" placeholder="Joko" required>
+                <br>
+                <label>Last Name</label>
+                <br>
+                <input type="text" placeholder="Shidiq" required>
+                <br>
+                <label>Email Address</label>
+                <br>
+                <input type="email" name="email" placeholder="email@example.org" pattern="/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/" required>
+                <br>
+                <label>Password</label>
+                <br>
+                <input type="pass" placeholder="********" required>
+                <br>
+                <table>
+                    <tr>
+                        <td rowspan="2" style="width: 15px; font-size: small; color: white;"><input type="checkbox" checked="checked"/>check</td>
+                        <td style="font-size: 13px;">To register with us please tick to agree to our</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 13px; color: rgba(52, 110, 219, 0.733);">Terms and Conditions</td>
+                    </tr>
+                </table>
+                <button>Register</button>
+            </form>
+        </div>
+        <script>
+            var emailField = document.querySelector("input[name=email]");
+
+            emailField.addEventListener("invalid", function(){
+                this.setCustomValidity('');
+                if (!this.validity.valid) {
+                this.setCustomValidity('Sertakan '@' pada alamat email');  
+                }
+            });
+    </body>
+</html>
